@@ -34,8 +34,9 @@ public class Main {
      *                  IN SORTED ORDER. arrayList cannot contain duplicates
      * @param value the value we are looking for in the array list
      */
-    public static int binarySearch(ArrayList<Integer> arrayList, int value) {
-        throw new UnsupportedOperationException("LinearSearch() has not been implemented yet");
+    public static int binarySearch(ArrayList<Integer> arrayList, int value)
+    {
+         return value;
     }
 
     /**
@@ -43,8 +44,9 @@ public class Main {
      * This function uses MergeSort to sort the arrayList.
      * @param arrayList the ArrayList to be sorted. arrayList cannot contain duplicates
      */
-    public static void mergeSort(ArrayList<Integer> arrayList) {
-        throw new UnsupportedOperationException("mergeSort() has not been implemented yet");
+    public static void mergeSort(ArrayList<Integer> arrayList)
+    {
+
     }
 
     /**
@@ -57,7 +59,16 @@ public class Main {
      * @param hi the index of the last element in the range + 1.
      */
     public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-        throw new UnsupportedOperationException("sort() has not been implemented yet");
+
+        if( lo > hi)
+        {
+
+        }
+        else if (hi > lo)
+        {
+
+        }
+
     }
 
     /**
@@ -70,7 +81,21 @@ public class Main {
      * @param mid the boundary point of the two ranges. arrayList[mid] is in the second range.
      * @param hi the index of the last element in the second range + 1.
      */
-    public static void merge(ArrayList<Integer> arrayList, int lo, int mid, int hi) {
-        throw new UnsupportedOperationException("merge() has not been implemented yet");
+    public static void merge(ArrayList<Integer> arrayList, int lo, int mid, int hi)
+    {
+        ArrayList<Integer> sortMe = new ArrayList();
+         int x = lo;
+         int y = mid;
+         int z = hi;
+         for (int i = 0;i < arrayList.size(); i++)
+         {
+             if( arrayList(x(i)) < arrayList(y))
+             {
+                 arrayList++;
+             }
+
+
+
+
     }
 }
