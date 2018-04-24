@@ -87,48 +87,34 @@ public class Main {
      */
     public static void merge(ArrayList<Integer> arrayList, int lo, int mid, int hi)
     {
-        ArrayList<Integer> merged = new ArrayList<>();
-        int i = lo; int j = mid;
-        if(lo > 0)
-        {
-            for(int x = 0; x < lo; x++)
-            {
-                merged.add(arrayList.get(x));
-            }
-        }
-        while(i<= mid && j<=hi-1)
-        {
-            if(arrayList.get(i)<= arrayList.get(j))
-            {
-                merged.add(arrayList.get(i));
+        // create a temporary array to do our merging
+        ArrayList<Integer> tempArray = new ArrayList<Integer>();
+        // copy elements from the two ranges into our temporary array in order
+        int i = lo;
+        int j = mid;
+        while (i < mid || j < hi) {
+            if (j == hi) {
+                tempArray.add(arrayList.get(i));
                 i++;
             }
-            else
-            {
-                merged.add(arrayList.get(j));
+            else if (i == mid) {
+                tempArray.add(arrayList.get(j));
                 j++;
             }
-        }
-        if(i <= mid)
-        {
-            for(int x = i; x < mid; x++) {
-                merged.add(arrayList.get(x));
+            else if (arrayList.get(j) < arrayList.get(i)) {
+                tempArray.add(arrayList.get(j));
+                j++;
+            }
+            else {
+                tempArray.add(arrayList.get(i));
+                i++;
             }
         }
-        if(hi < arrayList.size())
-        {
-            for(int x = hi; x < arrayList.size(); x++)
-            {
-                merged.add(arrayList.get(x));
-            }
+        // copy tempArray back to arrayList
+        for (int index = 0; index < tempArray.size(); index++) {
+            arrayList.set(index + lo, tempArray.get(index));
         }
 
-        //I did this because "arrayList = merged;" wasn't working
-        arrayList.clear();
-        for(int x = 0; x < merged.size(); x++)
-        {
-            arrayList.add(merged.get(x));
-        }
     }
 
 }
